@@ -39,5 +39,5 @@ jspm_packages
 # macOS temp file
 .DS_Store
 
-# Compiled js files
-server/dist
+# Compiled files
+dist
