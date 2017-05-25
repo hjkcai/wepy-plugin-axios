@@ -5,7 +5,8 @@
   "main": "dist/wxa-adapter-common.js",
   "scripts": {
     "build": "npm run lint && node build/build.js",
-    "lint": "eslint lib/"
+    "lint": "eslint lib/",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "axios",
