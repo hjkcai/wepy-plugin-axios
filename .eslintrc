@@ -1,0 +1,11 @@
+{
+  "root": true,
+  "extends": "standard",
+  "globals": {
+    "wx": true
+  },
+  "rules": {
+    // allow paren-less arrow functions
+    "arrow-parens": 0
+  }
+}
