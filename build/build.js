@@ -2,6 +2,7 @@
 
 const fs = require('fs')
 const path = require('path')
+const rimraf = require('rimraf')
 const rollup = require('rollup')
 
 const buble = require('rollup-plugin-buble')
@@ -10,9 +11,8 @@ const commonjs = require('rollup-plugin-commonjs')
 const nodeResolve = require('rollup-plugin-node-resolve')
 
 const dist = path.resolve(__dirname, '../dist')
-if (!fs.existsSync(dist)) {
-  fs.mkdirSync(dist)
-}
+if (fs.existsSync(dist)) rimraf.sync(dist)
+fs.mkdirSync(dist)
 
 build([
   {
