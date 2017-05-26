@@ -1,6 +1,6 @@
 # wepy-plugin-axios
 
-> 🎉 首先感谢 axios 和 wepy 的作者提供了这么赞的库！
+> 🎉 首先感谢 axios 和 wepy 的作者提供了这么赞的库！
 
 这是一个能够让你在小程序中使用 axios 的 wepy 插件
 
@@ -8,8 +8,8 @@
 [wepy文档](https://github.com/wepyjs/wepy)
 
 在制作小程序的时候，小程序内置的 `wx.request` 函数功能严重受限.
-即使是 `wepy.request` 也只是对原来的函数进行简单的封装, 并不能提供像 axios
-类似的高级功能. 所以我制作了这个插件来让小程序中可以使用 axios 的大部分功能.
+即使是 `wepy.request` 也只是对原来的函数进行简单的封装, 并不能提供像 axios
+类似的高级功能. 所以我制作了这个插件来让小程序中可以使用 axios 的大部分功能.
 
 在保持 API 尽可能贴近 axios 原始 API 的情况下, 本插件对 `wx.request`,
 `wx.uploadFile`, `wx.downloadFile` 进行了封装. 同时提供了请求队列功能,
@@ -28,7 +28,7 @@ yarn add axios wepy-plugin-axios
 
 ## 配置
 
-> 注意: **本插件必须配合 wepy 使用**. 下面的例子使用的均为最新版本的 wepy.
+> 注意: **本插件必须配合 wepy 使用**. 下面的例子使用的均为最新版本的 wepy.
 > 如果你还不会用 wepy 或 axios, 请先阅读它们各自的文档
 
 1. 配置 wepy
@@ -124,7 +124,7 @@ axios.post('https://huajingkun.com/api/avatar', {
 
 ### 下载文件
 
-如果在一个 GET 请求中 `responseType` 为 `file`, 则将此请求视为下载文件请求.
+如果在一个 GET 请求中 `responseType` 为 `file`, 则将此请求视为下载文件请求.
 返回**文件的临时路径** (详见[小程序开发文档](https://mp.weixin.qq.com/debug/wxadoc/dev/api/network-file.html#wxdownloadfileobject))
 
 注意: 只有此时可以使用 http 协议
@@ -170,7 +170,7 @@ axios.get('http://www.baidu.com', { responseType: 'file' }).then(response => {
 
 ```js
 {
-  // 服务器发回的响应数据
+  // 服务器发回的响应数据
   // 对于下载文件请求, data 字段的内容为文件的临时路径
   data: object | string | any,
 
@@ -197,12 +197,12 @@ axios.get('http://www.baidu.com', { responseType: 'file' }).then(response => {
 **直接修改 axios 源文件**
 
 在 `lib/plugin.js` 中删除了 axios 源文件 `lib/defaults.js` 中有关 adapters 的定义.
-由于 axios 是同时支持浏览器和 Node.js 的, 但 wepy 在打包时无法忽略 Node.js
+由于 axios 是同时支持浏览器和 Node.js 的, 但 wepy 在打包时无法忽略 Node.js
 的原生模块, 所以会导致打包失败
 
 但 wepy 的插件目前只能在打包的最后一步中对源文件进行修改, 不能修改依赖关系信息,
 也就无法忽略为 Node.js 准备的代码, 所以只能粗暴地删除它. 浏览器断的代码也顺便删除了,
-因为小程序中不能使用 `XMLHttpRequest`, 必须完全使用自定义的 adapter, 
+因为小程序中不能使用 `XMLHttpRequest`, 必须完全使用自定义的 adapter, 
 删除后还可以减小文件体积
 
 这样的修改意味着, 如果你的小程序代码和其它代码共用一个 `node_modules` 文件夹的话,
