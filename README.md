@@ -15,7 +15,7 @@
 `wx.uploadFile`, `wx.downloadFile` 进行了封装. 同时提供了请求队列功能,
 解除了最多同时只发送5个请求的限制.
 
-喜欢就给个 Star 支持一下吧😏 欢迎开 issur 和 PR
+喜欢就给个 Star 支持一下吧😏 欢迎开 issue 和 PR
 
 ## 安装
 
@@ -202,7 +202,7 @@ axios.get('http://www.baidu.com', { responseType: 'file' }).then(response => {
 
 但 wepy 的插件目前只能在打包的最后一步中对源文件进行修改, 不能修改依赖关系信息,
 也就无法忽略为 Node.js 准备的代码, 所以只能粗暴地删除它. 浏览器断的代码也顺便删除了,
-因为小程序中不能使用 `XMLHttpRequest`, 必须完全使用自定义的 adapter, 
+因为小程序中不能使用 `XMLHttpRequest`, 必须完全使用自定义的 adapter,
 删除后还可以减小文件体积
 
 这样的修改意味着, 如果你的小程序代码和其它代码共用一个 `node_modules` 文件夹的话,
