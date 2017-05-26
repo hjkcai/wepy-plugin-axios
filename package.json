@@ -1,8 +1,8 @@
 {
-  "name": "axios-wxa-adapter",
+  "name": "wepy-plugin-axios",
   "version": "0.0.1",
   "description": "An axios adapter for wechat applications",
-  "main": "dist/wxa-adapter.js",
+  "main": "lib/plugin.js",
   "scripts": {
     "build": "npm run lint && node build/build.js",
     "lint": "eslint lib/",
@@ -11,10 +11,18 @@
   "keywords": [
     "axios",
     "wechat",
-    "wx"
+    "wepy"
   ],
   "author": "Jingkun Hua <huajingkun1214@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hjkcai/wepy-plugin-axios.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hjkcai/wepy-plugin-axios/issues"
+  },
+  "homepage": "https://github.com/hjkcai/wepy-plugin-axios#readme",
   "devDependencies": {
     "eslint": "^3.19.0",
     "eslint-config-standard": "^10.2.1",

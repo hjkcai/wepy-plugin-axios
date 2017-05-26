@@ -15,7 +15,7 @@ fs.mkdirSync(dist)
 
 Promise.resolve().then(() => {
   const rollupConfig = {
-    entry: path.resolve(__dirname, '../lib/wxa-adapter.js'),
+    entry: path.resolve(__dirname, '../lib/adapter.js'),
     sourceMap: true,
     plugins: [
       nodeResolve(),
@@ -26,11 +26,11 @@ Promise.resolve().then(() => {
 
   return rollup.rollup(rollupConfig)
 }).then(bundle => {
-  const dest = path.join(dist, 'wxa-adapter.js')
+  const dest = path.join(dist, 'adapter.js')
   return bundle.write({
     dest,
     format: 'cjs',
-    moduleName: 'wxaAdapter',
+    moduleName: 'wepyAxiosAdapter',
     sourceMap: true
   })
 })
