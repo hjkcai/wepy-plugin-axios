@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "An axios adapter for wechat applications",
   "main": "lib/plugin.js",
+  "files": [
+    "dist/",
+    "lib/"
+  ],
   "scripts": {
     "build": "npm run lint && node build/build.js",
     "lint": "eslint lib/",
