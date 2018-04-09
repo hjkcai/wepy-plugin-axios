@@ -1,6 +1,6 @@
 {
   "name": "wepy-plugin-axios",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "An axios adapter for wechat applications",
   "main": "lib/plugin.js",
   "files": [
